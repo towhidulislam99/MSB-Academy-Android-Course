@@ -1,6 +1,7 @@
 package com.example.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -33,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new FoodModel("Pizza","This is ecious Food Yammee",R.drawable.pizza ));
         arrayList.add(new FoodModel("Pizza","This is ecious Food Yammee",R.drawable.food1 ));
         arrayList.add(new FoodModel("Pizza","This is ecious Food Yammee",R.drawable.pizza ));
+
+
+
+
+        food_Adapter adapter = new food_Adapter(MainActivity.this,arrayList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        recyclerView.setAdapter(adapter);
 
 
 
