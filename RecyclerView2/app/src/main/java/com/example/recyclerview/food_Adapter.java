@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -63,6 +64,13 @@ public class food_Adapter extends RecyclerView.Adapter<food_Adapter.MyViewHolder
             foodname = itemView.findViewById(R.id.foodNameTV);
             fooddesc = itemView.findViewById(R.id.fooddescTV);
             image = itemView.findViewById(R.id.ImageView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context,arrayList.get(getAdapterPosition()).fooddesc.toString(),Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
