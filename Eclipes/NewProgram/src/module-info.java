@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Towhid
- *
- */
-module NewProgram {
-}
