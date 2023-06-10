@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Fragment_One.sendcustomlisener {
 
 
     @Override
@@ -37,6 +37,24 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(id.l2,fragment);
         ft.commit();
+
+
+
+    }
+
+    @Override
+    public void SendMessage(String text) {
+
+        Bundle bundle = new Bundle();
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment_Two fragment_two = new Fragment_Two();
+        bundle.putString("MSG",text);
+        fragment_two.setArguments(bundle);
+        ft.replace(id.l2,fragment_two);
+        ft.commit();
+
 
 
 
